@@ -1,7 +1,6 @@
 :root {
   --bg: #f3f6f2;
   --surface: #ffffff;
-  --surface-alt: #eef3ef;
   --text: #102117;
   --text-soft: #4b5f53;
   --brand: #0d7a66;
@@ -238,7 +237,8 @@ h3 {
 
 .benefits-grid,
 .features-grid,
-.pricing-grid {
+.pricing-grid,
+.testimonials-grid {
   display: grid;
   gap: 1rem;
 }
@@ -338,9 +338,16 @@ h3 {
   background: linear-gradient(180deg, #ffffff, #f5fbf8);
 }
 
-.price-lead {
-  margin: 0.55rem 0 1rem;
+.price-amount {
+  margin: 0.65rem 0 0.3rem;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
   color: var(--brand-dark);
+}
+
+.price-lead {
+  margin: 0 0 1rem;
+  color: var(--text-soft);
   font-weight: 800;
 }
 
@@ -354,20 +361,44 @@ h3 {
   margin-top: 0.45rem;
 }
 
-.testimonial {
-  text-align: center;
+.price-note {
+  margin-top: 0.7rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
 }
 
-.testimonial blockquote {
+.testimonial {
+  text-align: left;
+}
+
+.testimonials-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.testimonial-card blockquote {
   margin: 0;
   font-family: "Sora", sans-serif;
-  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.4;
 }
 
 .author {
-  margin-top: 0.8rem;
+  margin: 1rem 0 0;
+  font-weight: 800;
+}
+
+.author-role {
+  margin: 0.2rem 0 0;
   color: var(--text-soft);
-  font-weight: 700;
+  font-size: 0.94rem;
 }
 
 .cta-final {
@@ -396,6 +427,35 @@ h3 {
   font-size: 0.92rem;
 }
 
+.floating-whatsapp {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(130deg, var(--brand), var(--brand-dark));
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 14px 24px rgba(10, 90, 76, 0.34);
+}
+
+.floating-whatsapp::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.floating-whatsapp:hover,
+.floating-whatsapp:focus-visible {
+  transform: translateY(-2px);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -420,6 +480,10 @@ h3 {
   .features-grid,
   .steps {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -457,6 +521,10 @@ h3 {
   .steps,
   .pricing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .floating-whatsapp {
+    display: inline-flex;
   }
 }
 

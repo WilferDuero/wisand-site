@@ -1,9 +1,20 @@
-const WHATSAPP_NUMBER = "573000000000";
-const WHATSAPP_MESSAGE = "Hola, quiero una demo de WISAND para mi negocio.";
+const WHATSAPP_NUMBER = "3204477725";
+const WHATSAPP_DEFAULT_COUNTRY_CODE = "57";
+const WHATSAPP_MESSAGE =
+  "Hola, quiero una demo de WISAND para mi negocio. Que plan me recomiendan segun mi tipo de negocio? Mi tipo de negocio es:";
+
+function getWhatsAppNumber() {
+  const digits = WHATSAPP_NUMBER.replace(/\D/g, "");
+  if (digits.length === 10) {
+    return `${WHATSAPP_DEFAULT_COUNTRY_CODE}${digits}`;
+  }
+  return digits;
+}
 
 function buildWhatsAppUrl() {
   const encodedMessage = encodeURIComponent(WHATSAPP_MESSAGE);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+  const normalizedNumber = getWhatsAppNumber();
+  return `https://wa.me/${normalizedNumber}?text=${encodedMessage}`;
 }
 
 function applyWhatsAppLinks() {
@@ -20,12 +31,18 @@ function setupCurrentYear() {
   if (!yearElement) {
     return;
   }
-  yearElement.textContent = new Date().getFullYear();
+
+  yearElement.textContent = String(new Date().getFullYear());
 }
 
 function setupRevealAnimations() {
   const revealElements = document.querySelectorAll(".reveal");
   if (!revealElements.length) {
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    revealElements.forEach((element) => element.classList.add("is-visible"));
     return;
   }
 
