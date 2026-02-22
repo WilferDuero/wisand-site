@@ -161,28 +161,51 @@ h3 {
 }
 
 .hero {
-  padding-top: 7.4rem;
+  padding-top: 8rem;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 3rem;
+  gap: 3.3rem;
   align-items: center;
 }
 
+.hero-copy h1 {
+  font-size: clamp(2.35rem, 5.5vw, 4.35rem);
+  line-height: 1.1;
+  color: #07142f;
+}
+
 .hero-subtitle {
-  margin: 1.2rem 0 0;
-  max-width: 54ch;
+  margin: 1.25rem 0 0;
+  max-width: 52ch;
   color: var(--text-soft);
-  font-size: 1.06rem;
+  font-size: 1.08rem;
 }
 
 .hero-actions {
-  margin-top: 2.1rem;
+  margin-top: 2.25rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.hero .btn-primary {
+  background: linear-gradient(130deg, #0f2c89, #0b2066);
+  box-shadow: 0 18px 34px rgba(11, 32, 102, 0.38);
+}
+
+.hero .btn-secondary {
+  background: transparent;
+  border: 2px solid rgba(54, 85, 188, 0.58);
+  color: #1b3d9b;
+}
+
+.hero .btn-secondary:hover,
+.hero .btn-secondary:focus-visible {
+  background: rgba(23, 57, 166, 0.06);
+  border-color: rgba(23, 57, 166, 0.72);
 }
 
 .btn {
@@ -578,6 +601,10 @@ h3 {
 
   .hero-subtitle {
     margin-inline: auto;
+  }
+
+  .hero {
+    padding-top: 7rem;
   }
 
   .hero-actions {
