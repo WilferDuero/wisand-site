@@ -168,14 +168,20 @@ h3 {
 }
 
 .hero {
-  padding-top: 8.5rem;
+  padding-top: 6.6rem;
+  padding-bottom: 5.1rem;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 3.4rem;
+  grid-template-columns: minmax(0, 45%) minmax(0, 55%);
+  gap: 2.2rem;
   align-items: center;
+}
+
+.hero-copy {
+  align-self: center;
+  max-width: 540px;
 }
 
 .hero-copy h1 {
@@ -267,17 +273,22 @@ h3 {
 }
 
 .hero-media {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: end;
 }
 
 .phone-frame {
-  width: min(348px, 100%);
-  padding: 12px;
-  border-radius: 40px;
+  width: 100%;
+  max-width: 420px;
+  padding: 9px;
+  border-radius: 32px;
   background: linear-gradient(160deg, #101c3e, #1d3066);
-  box-shadow: var(--shadow-strong);
+  box-shadow: 0 16px 30px rgba(15, 44, 137, 0.24);
   position: relative;
+  margin: 0 auto;
 }
 
 .phone-notch {
@@ -292,13 +303,15 @@ h3 {
 }
 
 .phone-screen {
-  border-radius: 30px;
+  border-radius: 22px;
   overflow: hidden;
   background: #fff;
 }
 
 .phone-screen img {
-  aspect-ratio: 9 / 19;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
   object-fit: contain;
   background: #ffffff;
 }
@@ -619,6 +632,7 @@ h3 {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 1.5rem;
   }
 
   .hero-subtitle {
@@ -626,11 +640,16 @@ h3 {
   }
 
   .hero {
-    padding-top: 7.2rem;
+    padding-top: 6.9rem;
+    padding-bottom: 4.3rem;
   }
 
   .hero-actions {
     justify-content: center;
+  }
+
+  .hero-media {
+    justify-self: center;
   }
 
   .setup-grid,
