@@ -282,9 +282,9 @@ h3 {
 
 .phone-frame {
   width: 100%;
-  max-width: 420px;
-  padding: 9px;
-  border-radius: 32px;
+  max-width: 340px;
+  padding: 8px;
+  border-radius: 30px;
   background: linear-gradient(160deg, #101c3e, #1d3066);
   box-shadow: 0 16px 30px rgba(15, 44, 137, 0.24);
   position: relative;
@@ -303,23 +303,30 @@ h3 {
 }
 
 .phone-screen {
-  border-radius: 22px;
+  border-radius: 20px;
+  aspect-ratio: 9 / 19;
   overflow: hidden;
   background: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .phone-screen img {
   width: 100%;
-  max-width: 420px;
-  max-height: 560px;
+  max-width: none;
   height: auto;
   object-fit: contain;
   display: block;
   background: #ffffff;
+  transform-origin: top center;
+  transform: translateY(0) scale(1.08);
+  animation: heroScreenPan 12s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .hero-phone {
-  animation: floating 3.8s ease-in-out infinite;
+  animation: floating 4.2s ease-in-out infinite;
 }
 
 @keyframes floating {
@@ -328,7 +335,16 @@ h3 {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes heroScreenPan {
+  0% {
+    transform: translateY(0) scale(1.08);
+  }
+  100% {
+    transform: translateY(-14%) scale(1.08);
   }
 }
 
@@ -656,6 +672,10 @@ h3 {
 
   .hero-media {
     justify-self: center;
+  }
+
+  .phone-frame {
+    max-width: 320px;
   }
 
   .setup-grid,
