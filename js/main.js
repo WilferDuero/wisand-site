@@ -1,28 +1,14 @@
-const WHATSAPP_NUMBER = "3204477725";
-const WHATSAPP_DEFAULT_COUNTRY_CODE = "57";
-const WHATSAPP_MESSAGE =
-  "Hola, quiero una demo de WISAND para mi negocio. Que plan me recomiendan segun mi tipo de negocio? Mi tipo de negocio es:";
-
-function getWhatsAppNumber() {
-  const digits = WHATSAPP_NUMBER.replace(/\D/g, "");
-  if (digits.length === 10) {
-    return `${WHATSAPP_DEFAULT_COUNTRY_CODE}${digits}`;
-  }
-  return digits;
-}
-
-function buildWhatsAppUrl() {
-  const encodedMessage = encodeURIComponent(WHATSAPP_MESSAGE);
-  const normalizedNumber = getWhatsAppNumber();
-  return `https://wa.me/${normalizedNumber}?text=${encodedMessage}`;
-}
+const WHATSAPP_URL =
+  "https://wa.me/573204477725?text=Hola,%20quiero%20una%20demo%20de%20WISAND%20para%20mi%20negocio.%0A%0AMe%20gustaría%20que%20me%20recomienden%20el%20mejor%20plan%20según%20mi%20tipo%20de%20negocio.%0A%0AMi%20tipo%20de%20negocio%20es:";
 
 function applyWhatsAppLinks() {
-  const url = buildWhatsAppUrl();
   const links = document.querySelectorAll(".js-whatsapp-link");
+  if (!links.length) {
+    return;
+  }
 
   links.forEach((link) => {
-    link.setAttribute("href", url);
+    link.setAttribute("href", WHATSAPP_URL);
   });
 }
 
@@ -55,7 +41,7 @@ function setupRevealAnimations() {
         }
       });
     },
-    { threshold: 0.18 }
+    { threshold: 0.16 }
   );
 
   revealElements.forEach((element) => observer.observe(element));
