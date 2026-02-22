@@ -306,12 +306,39 @@ h3 {
   border-radius: 22px;
   overflow: hidden;
   background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shot {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 44, 137, 0.14);
+}
+
+.shot img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.shot--hero {
+  max-width: 460px;
+  max-height: 720px;
+  margin: 0 auto;
+  border-radius: 22px;
+  box-shadow: 0 16px 34px rgba(15, 44, 137, 0.2);
 }
 
 .phone-screen img {
   width: 100%;
   max-width: 420px;
-  max-height: 560px;
+  max-height: 720px;
   height: auto;
   object-fit: contain;
   display: block;
@@ -382,10 +409,18 @@ h3 {
   border: 1px solid var(--line);
   background: #ffffff;
   box-shadow: 0 24px 52px rgba(15, 44, 137, 0.18);
+  overflow: visible;
+}
+
+.shot--card {
+  max-width: 100%;
+  max-height: 620px;
 }
 
 .feature-shot img {
   width: 100%;
+  max-width: 100%;
+  max-height: 100%;
   height: auto;
   object-fit: contain;
   display: block;
