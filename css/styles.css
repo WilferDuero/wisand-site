@@ -311,8 +311,10 @@ h3 {
 .phone-screen img {
   width: 100%;
   max-width: 420px;
+  max-height: 560px;
   height: auto;
   object-fit: contain;
+  display: block;
   background: #ffffff;
 }
 
@@ -383,6 +385,10 @@ h3 {
 }
 
 .feature-shot img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
   border-radius: 22px;
 }
 
