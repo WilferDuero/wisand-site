@@ -154,11 +154,11 @@ h3 {
 }
 
 .section-heading {
-  margin-bottom: 2rem;
+  margin-bottom: 2.8rem;
 }
 
 .hero {
-  padding-top: 5.2rem;
+  padding-top: 6rem;
 }
 
 .hero-grid {
@@ -269,20 +269,61 @@ h3 {
   }
 }
 
-.benefits-grid,
+.feature-rows,
 .features-grid,
 .steps-grid,
 .setup-grid,
 .plans-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
-.benefits-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.feature-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
-.card,
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.feature-row.reverse .feature-row-media {
+  order: -1;
+}
+
+.feature-row-text h3 {
+  font-size: clamp(1.4rem, 2.5vw, 2.05rem);
+}
+
+.feature-row-text p {
+  margin: 0.8rem 0 0;
+  color: var(--text-soft);
+  max-width: 48ch;
+}
+
+.feature-row-media {
+  display: grid;
+  place-items: center;
+}
+
+.feature-shot {
+  width: min(460px, 100%);
+  margin: 0;
+  padding: 0.65rem;
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  box-shadow: 0 22px 45px rgba(30, 64, 175, 0.16);
+}
+
+.feature-shot img {
+  border-radius: 20px;
+}
+
 .feature-item,
 .step-card,
 .setup-card,
@@ -293,16 +334,6 @@ h3 {
   box-shadow: var(--shadow-soft);
 }
 
-.card {
-  padding: 1rem;
-}
-
-.card img {
-  border-radius: var(--radius-md);
-  margin-bottom: 0.85rem;
-}
-
-.card p,
 .feature-item p,
 .step-card p,
 .setup-card p,
@@ -311,33 +342,26 @@ h3 {
 }
 
 .features-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
 }
 
 .feature-item {
-  padding: 1.05rem 1.1rem;
+  padding: 1.25rem 1.25rem;
+  min-height: 148px;
 }
 
 .feature-item p {
   margin: 0.55rem 0 0;
 }
 
-.feature-media-card img {
-  border-radius: 12px;
-  margin-bottom: 0.65rem;
-}
-
 .steps-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .step-card {
-  padding: 1rem;
-}
-
-.step-card img {
-  border-radius: 12px;
-  margin: 0.7rem 0 0.8rem;
+  padding: 1.35rem 1.2rem;
 }
 
 .step-number {
@@ -490,8 +514,21 @@ h3 {
 }
 
 @media (max-width: 1024px) {
-  .features-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .feature-row.reverse .feature-row-media {
+    order: 0;
+  }
+
+  .feature-row-text {
+    text-align: center;
+  }
+
+  .feature-row-text p {
+    margin-inline: auto;
   }
 
   .steps-grid {
@@ -501,7 +538,7 @@ h3 {
 
 @media (max-width: 860px) {
   .section {
-    padding: 4.6rem 0;
+    padding: 5rem 0;
   }
 
   .hero-grid {
@@ -517,7 +554,6 @@ h3 {
     justify-content: center;
   }
 
-  .benefits-grid,
   .setup-grid,
   .plans-grid {
     grid-template-columns: 1fr;
@@ -551,6 +587,10 @@ h3 {
 
   .features-grid {
     grid-template-columns: 1fr;
+  }
+
+  .feature-shot {
+    width: min(430px, 100%);
   }
 }
 
