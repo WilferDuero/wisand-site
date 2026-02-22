@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECF8F2"/>
+      <stop offset="1" stop-color="#FFF7ED"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0D7A66"/>
+      <stop offset="1" stop-color="#0A5A4C"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="620" rx="32" fill="url(#bg)"/>
+  <rect x="40" y="40" width="820" height="540" rx="20" fill="#FFFFFF" stroke="#D6E2D8" stroke-width="2"/>
+  <rect x="72" y="78" width="240" height="22" rx="11" fill="#E6F2ED"/>
+  <rect x="72" y="124" width="320" height="12" rx="6" fill="#D9E8E0"/>
+  <rect x="72" y="148" width="290" height="12" rx="6" fill="#E6F2ED"/>
+  <rect x="72" y="186" width="360" height="160" rx="16" fill="#F5FAF7" stroke="#D6E2D8"/>
+  <rect x="460" y="78" width="368" height="268" rx="16" fill="#F9FCFA" stroke="#D6E2D8"/>
+  <rect x="72" y="372" width="244" height="170" rx="16" fill="#F9FCFA" stroke="#D6E2D8"/>
+  <rect x="336" y="372" width="244" height="170" rx="16" fill="#F9FCFA" stroke="#D6E2D8"/>
+  <rect x="600" y="372" width="228" height="170" rx="16" fill="url(#card)"/>
+  <rect x="480" y="110" width="136" height="12" rx="6" fill="#D8E7DF"/>
+  <rect x="480" y="134" width="210" height="12" rx="6" fill="#E6F2ED"/>
+  <rect x="480" y="170" width="90" height="130" rx="10" fill="#0D7A66" fill-opacity=".15"/>
+  <rect x="590" y="210" width="90" height="90" rx="10" fill="#E37B28" fill-opacity=".25"/>
+  <rect x="700" y="185" width="90" height="115" rx="10" fill="#0D7A66" fill-opacity=".25"/>
+  <text x="72" y="552" fill="#4B5F53" font-size="24" font-family="Arial, sans-serif">WISAND Dashboard Placeholder</text>
+</svg>
