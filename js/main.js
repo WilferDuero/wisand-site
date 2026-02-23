@@ -1,5 +1,7 @@
-const WHATSAPP_URL =
-  "https://wa.me/573204477725?text=Hola,%20quiero%20una%20demo%20de%20WISAND%20para%20mi%20negocio.%0A%0AMe%20gustaría%20que%20me%20recomienden%20el%20mejor%20plan%20según%20mi%20tipo%20de%20negocio.%0A%0AMi%20tipo%20de%20negocio%20es:";
+const WHATSAPP_NUMBER = "573204477725";
+const WHATSAPP_MESSAGE =
+  "Hola, quiero hablar con un asesor de WISAND para resolver dudas y elegir el mejor plan para mi negocio (Solo App o App + Web).";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 function applyWhatsAppLinks() {
   const links = document.querySelectorAll(".js-whatsapp-link");
