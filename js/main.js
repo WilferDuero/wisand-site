@@ -75,9 +75,49 @@ function setupMobileMenu() {
   });
 }
 
+function setupFloatingWhatsAppStopAtFooter() {
+  const floatingButton = document.querySelector(".floating-whatsapp");
+  const footer = document.querySelector(".site-footer");
+  if (!floatingButton || !footer) {
+    return;
+  }
+
+  const baseBottomPx = 16;
+  const footerGapPx = 12;
+  let ticking = false;
+
+  const updateFloatingButton = () => {
+    const footerTop = footer.getBoundingClientRect().top;
+    const viewportHeight = window.innerHeight;
+    const overlap = viewportHeight - footerTop;
+
+    if (overlap > 0) {
+      floatingButton.style.bottom = `${baseBottomPx + overlap + footerGapPx}px`;
+    } else {
+      floatingButton.style.bottom = `${baseBottomPx}px`;
+    }
+
+    ticking = false;
+  };
+
+  const requestUpdate = () => {
+    if (ticking) {
+      return;
+    }
+
+    ticking = true;
+    window.requestAnimationFrame(updateFloatingButton);
+  };
+
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  requestUpdate();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyWhatsAppLinks();
   setupCurrentYear();
   setupRevealAnimations();
   setupMobileMenu();
+  setupFloatingWhatsAppStopAtFooter();
 });
