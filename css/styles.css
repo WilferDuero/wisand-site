@@ -71,7 +71,8 @@ a {
 }
 
 .nav-shell {
-  min-height: 74px;
+  min-height: 78px;
+  padding-block: 0.2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,14 +83,16 @@ a {
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
-  min-height: 32px;
+  min-height: 44px;
 }
 
 .brand-logo {
   display: block;
-  height: 30px;
+  height: auto;
+  max-height: 44px;
   width: auto;
-  max-width: min(200px, 46vw);
+  max-width: min(260px, 52vw);
+  object-fit: contain;
 }
 
 .brand-mark {
@@ -725,8 +728,8 @@ h3 {
 
 @media (max-width: 760px) {
   .brand-logo {
-    height: 26px;
-    max-width: min(176px, 52vw);
+    max-height: 34px;
+    max-width: min(208px, 58vw);
   }
 
   .site-footer .brand-logo {
@@ -742,7 +745,7 @@ h3 {
     position: absolute;
     right: 4%;
     left: 4%;
-    top: 74px;
+    top: 78px;
     display: none;
     flex-direction: column;
     align-items: flex-start;
