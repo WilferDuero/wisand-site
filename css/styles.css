@@ -79,10 +79,28 @@ a {
 }
 
 .logo {
-  font-family: "Sora", sans-serif;
-  font-size: 1.22rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-height: 32px;
+}
+
+.brand-logo {
+  display: block;
+  height: 30px;
+  width: auto;
+  max-width: min(200px, 46vw);
+}
+
+.brand-mark {
+  display: block;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+}
+
+.brand-logo-light {
+  display: none;
 }
 
 .main-nav {
@@ -542,6 +560,27 @@ h3 {
   background: #ffffff;
 }
 
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto 0.85rem;
+}
+
+.site-footer .brand-logo {
+  height: 28px;
+  max-width: min(188px, 56vw);
+}
+
+.site-footer.is-dark .brand-logo-main {
+  display: none;
+}
+
+.site-footer.is-dark .brand-logo-light {
+  display: block;
+}
+
 .footer-whatsapp {
   display: flex;
   width: fit-content;
@@ -685,6 +724,16 @@ h3 {
 }
 
 @media (max-width: 760px) {
+  .brand-logo {
+    height: 26px;
+    max-width: min(176px, 52vw);
+  }
+
+  .site-footer .brand-logo {
+    height: 24px;
+    max-width: min(168px, 60vw);
+  }
+
   .menu-toggle {
     display: inline-block;
   }
