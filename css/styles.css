@@ -528,6 +528,22 @@ h3 {
   box-shadow: 0 24px 48px rgba(15, 44, 137, 0.15);
 }
 
+.plan-price {
+  margin: 0.55rem 0 0;
+  font-family: "Sora", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--brand-dark);
+}
+
+.plan-note {
+  margin: 0.38rem 0 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ok);
+}
+
 .plan-card ul {
   margin: 0.95rem 0 0;
   padding-left: 1rem;
@@ -535,6 +551,13 @@ h3 {
 
 .plan-card li + li {
   margin-top: 0.55rem;
+}
+
+.plans-footnote {
+  margin: 1.35rem 0 0;
+  text-align: center;
+  font-size: 0.92rem;
+  color: #5b6683;
 }
 
 .contact-section {
